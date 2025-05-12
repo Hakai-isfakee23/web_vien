@@ -1,0 +1,72 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+
+const Services = () => {
+  const services = [
+    {
+      icon: "⚙️",
+      title: "Đào tạo, nâng cao kiến thức và năng lực chuyên môn",
+      description:
+        "Viện Phát triển Khoa học Công nghệ và Giáo dục có chức năng quan trọng trong công tác đào tạo, nhằm nâng cao năng lực chuyên môn, sáng tạo và quản trị cho các cá nhân, tổ chức có nhu cầu.",
+      link: "/more_service1",
+    },
+    {
+      icon: "📚",
+      title: "Dịch vụ đăng ký thương hiệu, nhãn hiệu độc quyền",
+      description:
+        "Nhãn hiệu là dấu hiệu dùng để phân biệt hàng hóa, dịch vụ của các tổ chức, cá nhân khác nhau. Nhãn hiệu bao gồm nhãn hiệu thông thường, nhãn hiệu tập thể, nhãn hiệu chứng nhận, nhãn hiệu liên kết và nhãn hiệu nổi tiếng.",
+      link: "/more_service2",
+    },
+    {
+      icon: "🌐",
+      title: "Dịch vụ chứng nhận ISO 9001:2015",
+      description:
+        "Để đạt được chứng nhận ISO 9001:2015, tổ chức phải hoàn thành một quá trình đánh giá và xác minh của một tổ chức độc lập bên thứ 3 để chứng minh rằng hệ thống quản lý chất lượng của doanh nghiệp mình đáp ứng được các yêu cầu của tiêu chuẩn ISO 9001.",
+      link: "/more_service3",
+    },
+  ];
+
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <main className="bg-gray-50 py-8 flex-grow">
+        <section className="container mx-auto px-4">
+          <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
+            Các dịch vụ của chúng tôi
+          </h1>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="bg-white shadow-md p-6 rounded-lg flex flex-col"
+              >
+                <div className="flex justify-center items-center text-4xl mb-4">
+                  {service.icon}
+                </div>
+                <Link to={service.link}>
+                  <h3 className="text-xl font-bold text-left hover:text-blue-600">
+                    {service.title}
+                  </h3>
+                </Link>
+                <p className="mt-2 text-gray-600 text-left flex-grow">
+                  {service.description}
+                </p>
+                <Link
+                  to={service.link}
+                  className="mt-4 text-blue-600 font-medium hover:underline"
+                >
+                  Read more →
+                </Link>
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default Services;
