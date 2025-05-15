@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredResults, setFilteredResults] = useState([]);
+  const [activeIndex, setActiveIndex] = useState(-1);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const searchRef = useRef(null);
 
   const data = [
     { id: 1, title: "Đề án 1 triệu ắc quy xanh", link: "/more_news1" },
@@ -54,13 +58,66 @@ const Header = () => {
     setSearchQuery(query);
 
     if (query.trim()) {
-      const results = data.filter((item) =>
-        item.title.toLowerCase().includes(query)
-      );
-      setFilteredResults(results);
+      setLoading(true);
+      setShowDropdown(true);
+      setActiveIndex(-1);
+
+      setTimeout(() => {
+        const results = data.filter((item) =>
+          item.title.toLowerCase().includes(query)
+        );
+        setFilteredResults(results);
+        setLoading(false);
+      }, 500);
     } else {
       setFilteredResults([]);
+      setShowDropdown(false);
+      setLoading(false);
+      setActiveIndex(-1);
     }
+  };
+
+  // Keyboard navigation
+  const handleKeyDown = (e) => {
+    if (!showDropdown) return;
+    if (e.key === "ArrowDown") {
+      setActiveIndex((prev) =>
+        prev < filteredResults.length - 1 ? prev + 1 : prev
+      );
+    } else if (e.key === "ArrowUp") {
+      setActiveIndex((prev) => (prev > 0 ? prev - 1 : prev));
+    } else if (e.key === "Enter" && activeIndex >= 0) {
+      window.location.href = filteredResults[activeIndex].link;
+      setShowDropdown(false);
+    } else if (e.key === "Escape") {
+      setShowDropdown(false);
+    }
+  };
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (searchRef.current && !searchRef.current.contains(event.target)) {
+        setShowDropdown(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Highlight matched text
+  const highlightMatch = (title) => {
+    const idx = title.toLowerCase().indexOf(searchQuery);
+    if (idx === -1 || !searchQuery) return title;
+    return (
+      <>
+        {title.slice(0, idx)}
+        <span className="font-bold bg-yellow-100">
+          {title.slice(idx, idx + searchQuery.length)}
+        </span>
+        {title.slice(idx + searchQuery.length)}
+      </>
+    );
   };
 
   return (
@@ -80,27 +137,59 @@ const Header = () => {
           </div>
 
           {/* Search Bar */}
-          <div className="relative w-120">
+          <div className="relative w-120" ref={searchRef}>
             <input
               type="text"
               placeholder="Search..."
               value={searchQuery}
               onChange={handleSearch}
+              onKeyDown={handleKeyDown}
               className="pl-4 pr-10 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300 w-full"
+              onFocus={() => searchQuery && setShowDropdown(true)}
             />
             <MagnifyingGlassIcon className="h-5 w-5 text-blue-500 absolute right-3 top-2.5" />
-            {filteredResults.length > 0 && (
-              <ul className="absolute bg-white border rounded-lg mt-2 w-full shadow-lg z-10">
-                {filteredResults.map((result) => (
-                  <li key={result.id} className="p-2 hover:bg-gray-100">
-                    <Link
-                      to={result.link}
-                      className="text-blue-600 hover:underline"
+            {showDropdown && (
+              <ul className="absolute bg-white border rounded-lg mt-2 w-full shadow-lg z-10 max-h-60 overflow-auto">
+                {loading ? (
+                  <li className="p-2 flex justify-center items-center">
+                    <svg
+                      className="animate-spin h-5 w-5 text-blue-600"
+                      viewBox="0 0 24 24"
                     >
-                      {result.title}
-                    </Link>
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                        fill="none"
+                      />
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                      />
+                    </svg>
+                    <span className="ml-2 text-blue-600">Đang tìm kiếm...</span>
                   </li>
-                ))}
+                ) : filteredResults.length > 0 ? (
+                  filteredResults.map((result, idx) => (
+                    <li
+                      key={result.id}
+                      className={`p-2 hover:bg-gray-100 cursor-pointer ${
+                        idx === activeIndex ? "bg-blue-100" : ""
+                      }`}
+                      onMouseDown={() => (window.location.href = result.link)}
+                    >
+                      <span className="text-blue-600 hover:underline">
+                        {highlightMatch(result.title)}
+                      </span>
+                    </li>
+                  ))
+                ) : (
+                  <li className="p-2 text-gray-500">Không tìm thấy kết quả</li>
+                )}
               </ul>
             )}
           </div>
