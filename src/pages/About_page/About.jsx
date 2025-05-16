@@ -1,15 +1,10 @@
 import React from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import unitsData from "../../datas/unitsData";
 
 const About = () => {
-  const units = [
-    {
-      logo: "/src/assets/images/DTC_logo.jpg",
-      name: "Trung tâm Đào tạo và Ứng dụng Chuyển đổi số",
-      url: "https://ised.edu.vn/dtc/index.php",
-    },
-  ];
+  const units = unitsData;
 
   return (
     <>
