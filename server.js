@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Update with your MySQL credentials
+// MySQL credentials
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
