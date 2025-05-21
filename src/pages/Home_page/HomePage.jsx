@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -9,29 +11,46 @@ import unitsData from "../../datas/unitsData";
 const HomePage = () => {
   const units = unitsData;
 
+  useEffect(() => {
+    AOS.init({ duration: 1500, once: true });
+  }, []);
+
   return (
     <>
       <Header />
-      <main className="bg-gray-50">
+      <main className="bg-gray-50 overflow-hidden">
         {/* Hero Section */}
-        <Banner />
-        <section className="py-1 text-center">
-          <h1 className="text-4xl font-bold text-blue-600">
-            <span className="text-black">Chào mừng quý khách đã đến thăm</span>{" "}
-            <span className="text-blue-600">ISED</span>.
-          </h1>
-          <p className="text-2xl mt-4 text-gray-700">
-            Viện Phát triển Khoa học Công nghệ và Giáo dục.
-          </p>
+        <section
+          className="flex flex-col items-center justify-center pt-8 pb-4"
+          data-aos="fade-down"
+        >
+          <div className="max-w-lg w-full">
+            <Banner />
+          </div>
+          <div className="mt-1 text-center">
+            <h1 className="text-4xl font-bold text-blue-600">
+              <span className="text-black">
+                Chào mừng quý khách đã đến thăm{" "}
+              </span>
+              <span className="text-blue-600">ISED</span>.
+            </h1>
+            <p className="text-2xl mt-4 text-gray-700">
+              Viện Phát triển Khoa học Công nghệ và Giáo dục.
+            </p>
+          </div>
         </section>
 
         {/* Services Section */}
-        <section className="py-16">
+        <section className="py-16" data-aos="fade-up">
           <h2 className="text-3xl font-bold text-center text-gray-800">
             Các dịch vụ của chúng tôi
           </h2>
           <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
-            <div className="bg-white shadow-md p-6 rounded-lg flex flex-col">
+            <div
+              className="bg-white shadow-md p-6 rounded-lg flex flex-col"
+              data-aos="zoom-in"
+              data-aos-delay="0"
+            >
               <div className="text-blue-600 text-4xl mb-4 text-center">⚙️</div>
               <Link to="/more_service1">
                 <h3 className="text-lg font-bold text-left hover:text-blue-600">
@@ -50,7 +69,11 @@ const HomePage = () => {
                 Read more →
               </Link>
             </div>
-            <div className="bg-white shadow-md p-6 rounded-lg flex flex-col">
+            <div
+              className="bg-white shadow-md p-6 rounded-lg flex flex-col"
+              data-aos="zoom-in"
+              data-aos-delay="100"
+            >
               <div className="text-blue-600 text-4xl mb-4 text-center">📚</div>
               <Link to="/more_service2">
                 <h3 className="text-lg font-bold text-left hover:text-blue-600">
@@ -70,7 +93,11 @@ const HomePage = () => {
                 Read more →
               </Link>
             </div>
-            <div className="bg-white shadow-md p-6 rounded-lg flex flex-col">
+            <div
+              className="bg-white shadow-md p-6 rounded-lg flex flex-col"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
               <div className="text-blue-600 text-4xl mb-4 text-center">🌐</div>
               <Link to="/more_service3">
                 <h3 className="text-lg font-bold text-left hover:text-blue-600">
@@ -94,12 +121,15 @@ const HomePage = () => {
         </section>
 
         {/* News Section */}
-        <section className="bg-gray-100 py-16">
+        <section className="bg-gray-100 py-16" data-aos="fade-up">
           <h2 className="text-3xl font-bold text-center text-gray-800">
             Các tin tức mới nhất
           </h2>
           <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
-            <div className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+            <div
+              className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col"
+              data-aos="fade-right"
+            >
               <img
                 src="/src/assets/images/News1.jpg"
                 alt="News 1"
@@ -126,7 +156,10 @@ const HomePage = () => {
                 </Link>
               </div>
             </div>
-            <div className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+            <div
+              className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col"
+              data-aos="fade-up"
+            >
               <img
                 src="/src/assets/images/News2.jpg"
                 alt="News 2"
@@ -155,7 +188,10 @@ const HomePage = () => {
                 </Link>
               </div>
             </div>
-            <div className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+            <div
+              className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col"
+              data-aos="fade-left"
+            >
               <img
                 src="/src/assets/images/News3.jpg"
                 alt="News 3"
@@ -185,12 +221,15 @@ const HomePage = () => {
         </section>
 
         {/* Thông báo Section */}
-        <section className="container mx-auto px-4 py-16">
+        <section className="container mx-auto px-4 py-16" data-aos="fade-up">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
             Thông báo
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+            <div
+              className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col"
+              data-aos="zoom-in"
+            >
               <img
                 src="/src/assets/images/announcement1.jpg"
                 alt="Announ 1"
@@ -220,7 +259,7 @@ const HomePage = () => {
         </section>
 
         {/* Các đơn vị trực thuộc Section */}
-        <section className="container mx-auto px-4 py-16">
+        <section className="container mx-auto px-4 py-16" data-aos="fade-up">
           <h2 className="text-2xl font-bold text-center text-gray-800 mb-8">
             Các đơn vị trực thuộc
           </h2>
@@ -232,6 +271,8 @@ const HomePage = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:shadow-lg transition-shadow"
+                data-aos="zoom-in"
+                data-aos-delay={index * 100}
               >
                 <img
                   src={unit.logo}
@@ -245,7 +286,7 @@ const HomePage = () => {
         </section>
 
         {/* Contact Form Section */}
-        <section className="container mx-auto px-4 py-16">
+        <section className="container mx-auto px-4 py-16" data-aos="fade-up">
           <ContactForm />
         </section>
       </main>

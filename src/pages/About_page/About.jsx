@@ -1,20 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import unitsData from "../../datas/unitsData";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const About = () => {
   const units = unitsData;
+
+  useEffect(() => {
+    AOS.init({ duration: 1500, once: true });
+  }, []);
 
   return (
     <>
       <Header />
       <main className="bg-gray-50 py-8">
         <section className="container mx-auto px-12">
-          <h1 className="text-3xl font-bold text-gray-800 mb-6">
+          <h1
+            className="text-3xl font-bold text-gray-800 mb-6"
+            data-aos="fade-left"
+          >
             Chức năng, nhiệm vụ
           </h1>
-          <div className="bg-white shadow-md rounded-lg p-6 border border-black">
+          <div
+            className="bg-white shadow-md rounded-lg p-6 border border-black"
+            data-aos="zoom-in"
+          >
             <p className="text-gray-700 mb-4">
               <strong>Viện Phát triển Khoa học Công nghệ và Giáo dục</strong> là
               tổ chức khoa học, có tư cách pháp nhân và hoạt động theo Luật Khoa
@@ -63,10 +75,16 @@ const About = () => {
           </div>
 
           {/* New Section: Các đơn vị trực thuộc */}
-          <h2 className="text-2xl font-bold text-gray-800 mt-12 mb-6 text-center">
+          <h2
+            className="text-2xl font-bold text-gray-800 mt-12 mb-6 text-center"
+            data-aos="flip-left"
+          >
             Các đơn vị trực thuộc
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
+          <div
+            className="grid grid-cols-1 md:grid-cols-3 gap-7"
+            data-aos="fade-up"
+          >
             {units.map((unit, index) => (
               <a
                 key={index}
@@ -74,6 +92,8 @@ const About = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:shadow-lg transition-shadow"
+                data-aos="zoom-in"
+                data-aos-delay={index * 100}
               >
                 <img
                   src={unit.logo}

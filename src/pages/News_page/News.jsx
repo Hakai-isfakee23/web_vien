@@ -1,19 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const News = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1500, once: true });
+  }, []);
+
   return (
     <>
       <Header />
       <main className="bg-gray-50 py-8">
         <section className="container mx-auto px-4">
-          <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
+          <h1
+            className="text-3xl font-bold text-center text-gray-800 mb-8"
+            data-aos="flip-left"
+          >
             Các tin tức mới nhất
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+            {/* News Cards */}
+            <div
+              className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col"
+              data-aos="fade-up"
+            >
               <img
                 src="/src/assets/images/News1.jpg"
                 alt="News 1"
@@ -40,7 +53,11 @@ const News = () => {
                 </Link>
               </div>
             </div>
-            <div className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+            <div
+              className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
               <img
                 src="/src/assets/images/News2.jpg"
                 alt="News 2"
@@ -69,7 +86,11 @@ const News = () => {
                 </Link>
               </div>
             </div>
-            <div className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+            <div
+              className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               <img
                 src="/src/assets/images/News3.jpg"
                 alt="News 3"
@@ -95,7 +116,11 @@ const News = () => {
                 </Link>
               </div>
             </div>
-            <div className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+            <div
+              className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
               <img
                 src="/src/assets/images/News4.jpg"
                 alt="News 4"
@@ -123,7 +148,11 @@ const News = () => {
                 </Link>
               </div>
             </div>
-            <div className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+            <div
+              className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
               <img
                 src="/src/assets/images/News5.jpg"
                 alt="News 5"
@@ -149,7 +178,11 @@ const News = () => {
                 </Link>
               </div>
             </div>
-            <div className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+            <div
+              className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col"
+              data-aos="fade-up"
+              data-aos-delay="500"
+            >
               <img
                 src="/src/assets/images/News6.jpg"
                 alt="News 6"
@@ -182,11 +215,17 @@ const News = () => {
         <br />
         <br />
         <section className="container mx-auto px-4">
-          <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
+          <h1
+            className="text-3xl font-bold text-center text-gray-800 mb-8"
+            data-aos="fade-down"
+          >
             Thông báo
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
+            <div
+              className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col"
+              data-aos="zoom-in"
+            >
               <img
                 src="/src/assets/images/announcement1.jpg"
                 alt="Announ 1"

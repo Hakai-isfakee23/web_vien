@@ -6,7 +6,7 @@ const Banner = () => {
       <img
         src="/src/assets/images/Banner.jpg"
         alt="Banner"
-        className="mx-auto mb-8 animate-float"
+        className="mx-auto mb-8"
       />
     </section>
   );

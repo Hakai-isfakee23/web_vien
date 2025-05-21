@@ -26,6 +26,10 @@
   transform: translateY(0);
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -60,20 +64,4 @@
 
 .read-the-docs {
   color: #888;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
 }
