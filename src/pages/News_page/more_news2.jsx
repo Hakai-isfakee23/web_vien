@@ -1,21 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const MoreNews2 = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1200, once: true });
+  }, []);
+
   return (
     <>
       <Header />
       <main className="bg-gray-50 py-8">
         <section className="container mx-auto px-2 md:px-4 max-w-6xl">
-          <h1 className="text-3xl font-bold text-gray-800 mb-6">
+          <h1
+            className="text-3xl font-bold text-gray-800 mb-6"
+            data-aos="zoom-out"
+          >
             Hợp tác với Alibaba Việt Nam hỗ trợ doanh nghiệp chuẩn hóa hàng hóa,
             tham gia thương mại điện tử và chuỗi cung ứng toàn cầu
           </h1>
           <br />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
             {/* Main Content */}
-            <div className="col-span-2">
+            <div className="col-span-2" data-aos="fade-right">
               <p className="text-gray-700 mb-4">
                 Nhằm thúc đẩy sự phát triển của các doanh nghiệp Việt Nam trên
                 thị trường thương mại điện tử và chuỗi cung ứng toàn cầu, Viện
@@ -141,7 +150,10 @@ const MoreNews2 = () => {
             </div>
 
             {/* Sidebar */}
-            <aside className="inline-block p-4 -mt-4">
+            <aside
+              className="inline-block p-4 -mt-4 sticky top-30 self-start"
+              data-aos="fade-left"
+            >
               <h2 className="text-xl font-bold text-gray-800 mb-4">
                 Các tin tức khác
               </h2>

@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import AOS from "aos";
@@ -56,20 +55,20 @@ const Services = () => {
                 <div className="flex justify-center items-center text-4xl mb-4">
                   {service.icon}
                 </div>
-                <Link to={service.link}>
+                <a href={service.link}>
                   <h3 className="text-xl font-bold text-left hover:text-blue-600">
                     {service.title}
                   </h3>
-                </Link>
+                </a>
                 <p className="mt-2 text-gray-600 text-left flex-grow">
                   {service.description}
                 </p>
-                <Link
-                  to={service.link}
+                <a
+                  href={service.link}
                   className="mt-4 text-blue-600 font-medium hover:underline"
                 >
                   Read more →
-                </Link>
+                </a>
               </div>
             ))}
           </div>

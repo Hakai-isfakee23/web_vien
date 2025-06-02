@@ -77,7 +77,7 @@ const About = () => {
           {/* New Section: Các đơn vị trực thuộc */}
           <h2
             className="text-2xl font-bold text-gray-800 mt-12 mb-6 text-center"
-            data-aos="flip-left"
+            data-aos="zoom-out"
           >
             Các đơn vị trực thuộc
           </h2>

@@ -15,6 +15,7 @@ const db = mysql.createConnection({
 });
 
 app.post("/contact", (req, res) => {
+  // Contact form data submission
   const { name, phone, email, message } = req.body;
   const sql =
     "INSERT INTO contacts (name, phone, email, message) VALUES (?, ?, ?, ?)";

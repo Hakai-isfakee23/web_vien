@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Link } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Banner from "../../components/Banner";
@@ -52,22 +51,22 @@ const HomePage = () => {
               data-aos-delay="0"
             >
               <div className="text-blue-600 text-4xl mb-4 text-center">⚙️</div>
-              <Link to="/more_service1">
+              <a href="/more_service1">
                 <h3 className="text-lg font-bold text-left hover:text-blue-600">
                   Đào tạo, nâng cao kiến thức và năng lực chuyên môn
                 </h3>
-              </Link>
+              </a>
               <p className="mt-2 text-gray-600 text-left flex-grow">
                 Viện Phát triển Khoa học Công nghệ và Giáo dục có chức năng quan
                 trọng trong công tác đào tạo, nhằm nâng cao năng lực chuyên môn,
                 sáng tạo và quản trị cho các cá nhân, tổ chức có nhu cầu.
               </p>
-              <Link
-                to="/more_service1"
+              <a
+                href="/more_service1"
                 className="mt-4 text-blue-600 font-medium hover:underline text-center"
               >
                 Read more →
-              </Link>
+              </a>
             </div>
             <div
               className="bg-white shadow-md p-6 rounded-lg flex flex-col"
@@ -75,23 +74,23 @@ const HomePage = () => {
               data-aos-delay="100"
             >
               <div className="text-blue-600 text-4xl mb-4 text-center">📚</div>
-              <Link to="/more_service2">
+              <a href="/more_service2">
                 <h3 className="text-lg font-bold text-left hover:text-blue-600">
                   Dịch vụ đăng ký thương hiệu, nhãn hiệu độc quyền
                 </h3>
-              </Link>
+              </a>
               <p className="mt-2 text-gray-600 text-left flex-grow">
                 Nhãn hiệu là dấu hiệu dùng để phân biệt hàng hóa, dịch vụ của
                 các tổ chức, cá nhân khác nhau. Nhãn hiệu bao gồm nhãn hiệu
                 thông thường, nhãn hiệu tập thể, nhãn hiệu chứng nhận, nhãn hiệu
                 liên kết và nhãn hiệu nổi tiếng.
               </p>
-              <Link
-                to="/more_service2"
+              <a
+                href="/more_service2"
                 className="mt-4 text-blue-600 font-medium hover:underline text-center"
               >
                 Read more →
-              </Link>
+              </a>
             </div>
             <div
               className="bg-white shadow-md p-6 rounded-lg flex flex-col"
@@ -99,23 +98,23 @@ const HomePage = () => {
               data-aos-delay="200"
             >
               <div className="text-blue-600 text-4xl mb-4 text-center">🌐</div>
-              <Link to="/more_service3">
+              <a href="/more_service3">
                 <h3 className="text-lg font-bold text-left hover:text-blue-600">
                   Dịch vụ chứng nhận ISO 9001:2015
                 </h3>
-              </Link>
+              </a>
               <p className="mt-2 text-gray-600 text-left flex-grow">
                 Để đạt được chứng nhận ISO 9001:2015, tổ chức phải hoàn thành
                 một quá trình đánh giá và xác minh của một tổ chức độc lập bên
                 thứ 3 để chứng minh rằng hệ thống quản lý chất lượng của doanh
                 nghiệp mình đáp ứng được các yêu cầu của tiêu chuẩn ISO 9001.
               </p>
-              <Link
-                to="/more_service3"
+              <a
+                href="/more_service3"
                 className="mt-4 text-blue-600 font-medium hover:underline text-center"
               >
                 Read more →
-              </Link>
+              </a>
             </div>
           </div>
         </section>
@@ -136,24 +135,24 @@ const HomePage = () => {
                 className="w-full h-65 object-cover"
               />
               <div className="p-4 flex flex-col flex-grow">
-                <Link to="/more_news1">
+                <a href="/more_news1">
                   <h3 className="text-lg font-bold text-left hover:text-blue-600">
                     Đề án 1 triệu ắc quy xanh - Hướng đi mới trong phát triển,
                     bảo vệ môi trường bền vững
                   </h3>
-                </Link>
+                </a>
                 <p className="mt-2 text-gray-600 text-left line-clamp-4 flex-grow">
                   Trước thực trạng ô nhiễm môi trường do ắc quy, axit chì thải
                   gây ra ngày càng nghiêm trọng, Viện Phát triển Khoa học Công
                   nghệ và Giáo Dục, phối hợp cùng Tiến sĩ Dương Văn Sinh, chính
                   thức triển khai Đề án “1 triệu bình ắc quy xanh”.
                 </p>
-                <Link
-                  to="/more_news1"
+                <a
+                  href="/more_news1"
                   className="mt-4 text-blue-600 font-medium hover:underline text-center"
                 >
                   Read more →
-                </Link>
+                </a>
               </div>
             </div>
             <div
@@ -166,13 +165,13 @@ const HomePage = () => {
                 className="w-full h-65 object-cover"
               />
               <div className="p-4 flex flex-col flex-grow">
-                <Link to="/more_news2">
+                <a href="/more_news2">
                   <h3 className="text-lg font-bold text-left hover:text-blue-600">
                     Hợp tác với Alibaba Việt Nam hỗ trợ doanh nghiệp chuẩn hóa
                     hàng hóa, tham gia thương mại điện tử và chuỗi cung ứng toàn
                     cầu
                   </h3>
-                </Link>
+                </a>
                 <p className="mt-2 text-gray-600 text-left line-clamp-4 flex-grow">
                   Nhằm thúc đẩy sự phát triển của các doanh nghiệp Việt Nam trên
                   thị trường thương mại điện tử và chuỗi cung ứng toàn cầu, Viện
@@ -180,12 +179,12 @@ const HomePage = () => {
                   Alibaba Việt Nam để hỗ trợ các doanh nghiệp trong việc chuẩn
                   hóa hàng hóa theo các tiêu chuẩn quốc tế vào ngày 18/02/2025.
                 </p>
-                <Link
-                  to="/more_news2"
+                <a
+                  href="/more_news2"
                   className="mt-4 text-blue-600 font-medium hover:underline text-center"
                 >
                   Read more →
-                </Link>
+                </a>
               </div>
             </div>
             <div
@@ -198,23 +197,23 @@ const HomePage = () => {
                 className="w-full h-65 object-cover"
               />
               <div className="p-4 flex flex-col flex-grow">
-                <Link to="/more_news3">
+                <a href="/more_news3">
                   <h3 className="text-lg font-bold text-left hover:text-blue-600">
                     Viện Phát triển Khoa học Công nghệ và Giáo dục thăm và làm
                     việc với Trường THPT Cần Thạnh
                   </h3>
-                </Link>
+                </a>
                 <p className="mt-2 text-gray-600 text-left line-clamp-4 flex-grow">
                   Ngày 05/08/2024, Viện Phát triển Khoa học Công nghệ và Giáo
                   dục (ISED) đã có chuyến thăm và làm việc với Ban Giám hiệu
                   Trường THPT Cần Thạnh (Huyện Cần Giờ, Thành phố Hồ Chí Minh).
                 </p>
-                <Link
-                  to="/more_news3"
+                <a
+                  href="/more_news3"
                   className="mt-4 text-blue-600 font-medium hover:underline text-center"
                 >
                   Read more →
-                </Link>
+                </a>
               </div>
             </div>
           </div>
@@ -236,23 +235,23 @@ const HomePage = () => {
                 className="w-full h-65 object-cover"
               />
               <div className="p-4 flex flex-col flex-grow">
-                <Link to="/more_announcement1">
+                <a href="/more_announcement1">
                   <h3 className="text-lg font-bold text-left hover:text-blue-600">
                     Đăng ký Lớp học Lập trình HTML, CSS và Javascript miễn phí
                   </h3>
-                </Link>
+                </a>
                 <p className="mt-2 text-gray-600 text-left line-clamp-4 flex-grow">
                   Chi bộ Công ty Cổ phần Đầu tư AN NÔNG PHÚ Group kết hợp cùng
                   Trung tâm Đào tạo và Ứng dụng Công nghệ số thuộc Viện Phát
                   triển Khoa học Công nghệ và Giáo dục tiến hành chiêu sinh lớp
                   học “Lập trình HTML, CSS và Javascript” miễn phí.
                 </p>
-                <Link
-                  to="/more_announcement1"
+                <a
+                  href="/more_announcement1"
                   className="mt-4 text-blue-600 font-medium hover:underline text-center"
                 >
                   Read more →
-                </Link>
+                </a>
               </div>
             </div>
           </div>
