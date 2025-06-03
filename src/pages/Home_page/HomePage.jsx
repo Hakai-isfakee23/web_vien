@@ -235,7 +235,7 @@ const HomePage = () => {
                 className="w-full h-65 object-cover"
               />
               <div className="p-4 flex flex-col flex-grow">
-                <a href="/more_announcement1">
+                <a href="/more_announce1">
                   <h3 className="text-lg font-bold text-left hover:text-blue-600">
                     Đăng ký Lớp học Lập trình HTML, CSS và Javascript miễn phí
                   </h3>
@@ -247,7 +247,7 @@ const HomePage = () => {
                   học “Lập trình HTML, CSS và Javascript” miễn phí.
                 </p>
                 <a
-                  href="/more_announcement1"
+                  href="/more_announce1"
                   className="mt-4 text-blue-600 font-medium hover:underline text-center"
                 >
                   Read more →

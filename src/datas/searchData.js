@@ -32,12 +32,24 @@ const searchData = [
   {
     id: 10,
     title: "Đăng ký Lớp học Lập trình HTML, CSS và Javascript miễn phí",
-    link: "/more_announcement1",
+    link: "/more_announce1",
   },
   {
     id: 11,
     title: "Giới thiệu về Viện Phát triển Khoa học Công nghệ và Giáo dục",
     link: "/About",
+  },
+  {
+    id: 12,
+    title:
+      "Bộ Khoa học và Công nghệ cập nhật phiên bản mới của Khung Kiến trúc Chính phủ Số Việt Nam",
+    link: "/more_blog1",
+  },
+  {
+    id: 13,
+    title:
+      "Bộ Khoa học và Công nghệ công bố 5 giá trị cốt lõi, 4 phương châm hành động",
+    link: "/more_blog2",
   },
 ];
 
