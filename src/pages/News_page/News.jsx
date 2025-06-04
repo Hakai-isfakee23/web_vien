@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import ScrollToTopButton from "../../components/ScrollToTopButton";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -254,6 +255,7 @@ const News = () => {
         </section>
       </main>
       <Footer />
+      <ScrollToTopButton />
     </>
   );
 };

@@ -6,6 +6,7 @@ import Footer from "../../components/Footer";
 import Banner from "../../components/Banner";
 import ContactForm from "../../components/ContactForm";
 import unitsData from "../../datas/unitsData";
+import ScrollToTopButton from "../../components/ScrollToTopButton";
 
 const HomePage = () => {
   const units = unitsData;
@@ -367,6 +368,7 @@ const HomePage = () => {
         </section>
       </main>
       <Footer />
+      <ScrollToTopButton />
     </>
   );
 };
