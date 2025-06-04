@@ -148,7 +148,7 @@ const MoreNews6 = () => {
 
             {/* Sidebar */}
             <aside
-              className="inline-block p-4 -mt-4 sticky top-30 self-start"
+              className="inline-block p-4 -mt-4 sticky top-35 self-start"
               data-aos="fade-left"
             >
               <h2 className="text-xl font-bold text-gray-800 mb-4">
