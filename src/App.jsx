@@ -4,18 +4,22 @@ import HomePage from "./pages/Home_page/HomePage";
 import About from "./pages/About_page/About";
 import Services from "./pages/Services_page/Services";
 import News from "./pages/News_page/News";
+
 import MoreNews1 from "./pages/News_page/more_news1";
 import MoreNews2 from "./pages/News_page/more_news2";
 import MoreNews3 from "./pages/News_page/more_news3";
 import MoreNews4 from "./pages/News_page/more_news4";
 import MoreNews5 from "./pages/News_page/more_news5";
 import MoreNews6 from "./pages/News_page/more_news6";
+
 import Blog from "./pages/Blog_page/Blog";
 import MoreBlog1 from "./pages/Blog_page/more_blog1";
 import MoreBlog2 from "./pages/Blog_page/more_blog2";
+
 import MoreService1 from "./pages/Services_page/more_service1";
 import MoreService2 from "./pages/Services_page/more_service2";
 import MoreService3 from "./pages/Services_page/more_service3";
+
 import MoreAnnou1 from "./pages/News_page/more_announce1";
 
 const App = () => {
