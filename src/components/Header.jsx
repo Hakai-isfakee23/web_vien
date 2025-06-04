@@ -48,19 +48,19 @@ const Header = () => {
         <nav className="container mx-auto px-3 py-2 flex justify-center space-x-2 text-white">
           <a
             href="/"
-            className="relative px-5 py-2 rounded transition-colors duration-150 text-sm font-medium hover:bg-blue-100 hover:text-blue-700"
+            className="relative px-5 py-2 rounded transition-colors duration-150 text-base font-medium hover:bg-blue-100 hover:text-blue-700"
           >
             Trang chủ
           </a>
           <a
             href="/about"
-            className="relative px-5 py-2 rounded transition-colors duration-150 text-sm font-medium hover:bg-blue-100 hover:text-blue-700 flex items-center"
+            className="relative px-5 py-2 rounded transition-colors duration-150 text-base font-medium hover:bg-blue-100 hover:text-blue-700 flex items-center"
           >
             Giới thiệu
           </a>
           <a
             href="/services"
-            className="relative px-5 py-2 rounded transition-colors duration-150 text-sm font-medium hover:bg-blue-100 hover:text-blue-700"
+            className="relative px-5 py-2 rounded transition-colors duration-150 text-base font-medium hover:bg-blue-100 hover:text-blue-700"
           >
             Dịch vụ
           </a>
@@ -71,7 +71,7 @@ const Header = () => {
             onMouseLeave={handleMouseLeave}
           >
             <button
-              className={`flex items-center px-5 py-2 rounded transition-colors duration-150 text-sm font-medium focus:outline-none ${
+              className={`flex items-center px-5 py-2 rounded transition-colors duration-150 text-base font-medium focus:outline-none ${
                 dropdownOpen
                   ? "bg-blue-100 text-blue-700"
                   : "hover:bg-blue-100 hover:text-blue-700"
