@@ -15,7 +15,7 @@ const Header = () => {
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setDropdownOpen(false);
-    }, 120); // 120ms, có thể tăng/giảm nếu muốn
+    }, 120);
   };
 
   return (
@@ -45,62 +45,73 @@ const Header = () => {
 
       {/* Navigation Section */}
       <div className="bg-blue-600">
-        <nav className="container mx-auto px-3 py-2 flex justify-center space-x-10 text-white">
-          <a href="/" className="hover:underline text-sm font-medium">
-            TRANG CHỦ
+        <nav className="container mx-auto px-3 py-2 flex justify-center space-x-2 text-white">
+          <a
+            href="/"
+            className="relative px-5 py-2 rounded transition-colors duration-150 text-sm font-medium hover:bg-blue-100 hover:text-blue-700"
+          >
+            Trang chủ
           </a>
-          <a href="/about" className="hover:underline text-sm font-medium">
-            GIỚI THIỆU
+          <a
+            href="/about"
+            className="relative px-5 py-2 rounded transition-colors duration-150 text-sm font-medium hover:bg-blue-100 hover:text-blue-700 flex items-center"
+          >
+            Giới thiệu
           </a>
-          <a href="/services" className="hover:underline text-sm font-medium">
-            DỊCH VỤ
+          <a
+            href="/services"
+            className="relative px-5 py-2 rounded transition-colors duration-150 text-sm font-medium hover:bg-blue-100 hover:text-blue-700"
+          >
+            Dịch vụ
           </a>
           {/* Dropdown for BẢNG TIN */}
           <div
-            className="relative"
+            className="relative group"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <div>
-              <button
-                className="flex items-center hover:underline text-sm font-medium focus:outline-none"
-                type="button"
+            <button
+              className={`flex items-center px-5 py-2 rounded transition-colors duration-150 text-sm font-medium focus:outline-none ${
+                dropdownOpen
+                  ? "bg-blue-100 text-blue-700"
+                  : "hover:bg-blue-100 hover:text-blue-700"
+              }`}
+              type="button"
+            >
+              Bảng tin
+              <svg
+                className="ml-1 w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
               >
-                BẢNG TIN
-                <svg
-                  className="ml-1 w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-              <div
-                className={`absolute left-0 mt-2 w-40 bg-blue-700 rounded shadow-lg z-50 transition-all duration-150 ${
-                  dropdownOpen ? "block" : "hidden"
-                }`}
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div
+              className={`absolute left-0 mt-2 w-44 bg-blue-700 rounded shadow-lg z-50 transition-all duration-150 ${
+                dropdownOpen ? "block" : "hidden"
+              }`}
+            >
+              <a
+                href="/news"
+                className="block px-4 py-2 pl-4 text-white transition-colors hover:bg-blue-300 hover:text-blue-700 font-bold"
+                onClick={() => setDropdownOpen(false)}
               >
-                <a
-                  href="/news"
-                  className="block px-4 py-2 text-white hover:bg-blue-800"
-                  onClick={() => setDropdownOpen(false)}
-                >
-                  Tin tức
-                </a>
-                <a
-                  href="/blog"
-                  className="block px-4 py-2 text-white hover:bg-blue-800"
-                  onClick={() => setDropdownOpen(false)}
-                >
-                  Blog
-                </a>
-              </div>
+                Tin tức
+              </a>
+              <a
+                href="/blog"
+                className="block px-4 py-2 pl-4 text-white transition-colors hover:bg-blue-300 hover:text-blue-700 font-bold"
+                onClick={() => setDropdownOpen(false)}
+              >
+                Blog
+              </a>
             </div>
           </div>
         </nav>
