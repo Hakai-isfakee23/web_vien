@@ -23,7 +23,7 @@ const ScrollToTopButton = () => {
   return (
     <button
       onClick={handleClick}
-      className="fixed bottom-8 right-8 z-50 bg-gray-500 hover:bg-gray-600 text-white p-3 rounded-lg shadow-lg transition-colors"
+      className="fixed bottom-21 right-5 z-50 bg-gray-500 hover:bg-gray-600 text-white p-3 rounded-lg shadow-lg transition-colors"
       aria-label="Lên đầu trang"
     >
       <svg
