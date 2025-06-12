@@ -1,0 +1,43 @@
+Tóm tắt nội dung:
+- Yêu cầu: Hãy tóm tắt nội dung của các trang Blog
+
+(1) Bộ Khoa học và Công nghệ cập nhật phiên bản mới của Khung Kiến trúc Chính phủ Số Việt Nam
+- Nội dung để tóm tắt:
+Bộ Khoa học và Công nghệ (KH&CN) vừa chính thức ban hành Khung Kiến trúc Chính phủ số Việt Nam, phiên bản 4.0. Bản cập nhật này sẽ là cơ sở quan trọng giúp các bộ, ngành, địa phương điều chỉnh khung kiến trúc số của mình cho phù hợp với thực tiễn, hướng tới sự kết nối và liên thông hiệu quả.
+
+Khung Kiến trúc Chính phủ số: Bức tranh tổng thể
+Khung Kiến trúc Chính phủ số là một bức tranh tổng thể mô tả các thành phần và mối quan hệ trong hệ thống chính phủ số. Giống như một tấm bản đồ, khung kiến trúc giúp các bên liên quan xác định vị trí, hình dung những công việc đã thực hiện và những nhiệm vụ cần tiếp tục triển khai. Từ đó, giúp đảm bảo sự kết nối, liên thông giữa các hệ thống và tránh trùng lắp.
+
+Yêu cầu triển khai phiên bản 4.0 từ trung ương đến địa phương
+Ngày 30/3, Cục Chuyển đổi số quốc gia (Bộ KH&CN) đã đề nghị các đơn vị chuyên trách CNTT tại các bộ, ngành, địa phương nhanh chóng nghiên cứu và đề xuất khung kiến trúc số cấp bộ (đối với các bộ) và khung kiến trúc số cấp tỉnh (đối với các tỉnh, thành phố trực thuộc Trung ương) dựa trên phiên bản mới nhất.
+
+Theo hướng dẫn, việc xây dựng khung kiến trúc số phiên bản 4.0 cần bám sát và nâng cấp từ phiên bản trước, bảo đảm phù hợp với cơ cấu tổ chức mới của các bộ, ngành, địa phương; đồng thời thích ứng với các chủ trương sắp nhập đơn vị hành chính.
+
+Những điểm mới trong phiên bản 4.0
+Bản cập nhật Khung Kiến trúc Chính phủ số Việt Nam, phiên bản 4.0 có những điểm mới quan trọng:
+
+Cập nhật theo Luật Giao dịch điện tử 2023, đồng bộ với quy định có hiệu lực từ tháng 7/2024.
+Bổ sung nội dung từ Nghị quyết 57 của Bộ Chính trị về đổi mới sáng tạo và chuyển đổi số quốc gia.
+Cập nhật các mô hình tham chiếu, gồm: mô hình tham chiếu nghiệp vụ, dữ liệu, ứng dụng, công nghệ và an toàn thông tin.
+
+Hướng đi tương lai
+Việc ban hành phiên bản 4.0 nhằm mục tiêu tăng cường kết nối, chia sẻ dữ liệu, bảo đảm an toàn thông tin trong triển khai Chính phủ số. Các bộ, ngành, địa phương cần nhanh chóng áp dụng để đảm bảo tính đồng bộ và hiệu quả trong quá trình chuyển đổi số toàn diện.
+
+(2) Bộ Khoa học và Công nghệ công bố 5 giá trị cốt lõi, 4 phương châm hành động
+- Nội dung để tóm tắt:
+Bộ trưởng Nguyễn Mạnh Hùng đã chính thức công bố 5 giá trị cốt lõi và 4 phương châm hành động của Bộ Khoa học và Công nghệ, khẳng định đây là nền tảng vững chắc cho mọi hoạt động của Bộ trong thời gian tới.
+
+5 giá trị cốt lõi:
+-Tiên phong: Không chỉ đi đầu trong nghiên cứu, ứng dụng công nghệ mà còn sẵn sàng đối mặt với thách thức, mở đường cho những hướng đi mới. Khoa học công nghệ và đổi mới sáng tạo sẽ là động lực chính giúp Việt Nam thay đổi thứ hạng, phát triển nhanh và bền vững.
+-Sáng tạo: Luôn tìm kiếm cái mới, cải tiến và tạo ra sự khác biệt. Sáng tạo không chỉ là phát minh mà còn là đổi mới và ứng dụng thực tiễn, góp phần thúc đẩy sự phát triển của xã hội và nền kinh tế.
+-Đột phá: Tạo ra những bước tiến mang tính cách mạng, phá vỡ những giới hạn cũ để xây dựng mô hình mới. Khoa học công nghệ chính là chìa khóa giúp đất nước phát triển nhanh chóng và bền vững.
+-Trung dũng: Kết hợp giữa lòng trung thành, sự dũng cảm và trung thực. Trung thành với lý tưởng, dám nhận thử thách, đối mặt với khó khăn và luôn giữ vững tinh thần trách nhiệm.
+-Nghĩa tình: Thể hiện lòng biết ơn, tri ân các thế hệ đi trước và tiếp nối những giá trị truyền thống để xây dựng tương lai. Nghĩa tình tạo nên sự kết nối bền chặt giữa các thế hệ, tạo động lực phát triển bền vững.
+
+4 phương châm hành động:
+-Làm gương: Người lãnh đạo phải nói trước, làm trước để tạo niềm tin và động lực cho tập thể. Đây là yếu tố quan trọng hàng đầu trong quản lý và phát triển tổ chức.
+-Kỷ cương: Mọi cá nhân trong tổ chức đều phải tuân thủ nguyên tắc và kỷ luật nghiêm ngặt. Kỷ cương là yếu tố then chốt tạo nên sức mạnh tập thể và đảm bảo sự thành công của tổ chức.
+-Trọng tâm: Tập trung vào những nhiệm vụ then chốt, ưu tiên giải quyết những vấn đề quan trọng để tạo ra hiệu quả cao nhất.
+-Bứt phá: Hành động mạnh mẽ, quyết liệt để đạt được những thành tựu đột phá, tạo động lực phát triển nhanh và bền vững.
+Việc xác định rõ giá trị cốt lõi và phương châm hành động sẽ giúp Bộ Khoa học và Công nghệ tiếp tục phát huy vai trò tiên phong trong nghiên cứu, ứng dụng và đổi mới sáng tạo, góp phần đưa Việt Nam tiến nhanh trên con đường trở thành quốc gia phát triển với thu nhập cao.
+
