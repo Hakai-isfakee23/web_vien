@@ -12,6 +12,9 @@ import MoreNews4 from "./pages/News_page/more_news4";
 import MoreNews5 from "./pages/News_page/more_news5";
 import MoreNews6 from "./pages/News_page/more_news6";
 
+import SignIn from "./pages/SignIn_page/SignIn";
+import SignUp from "./pages/SignUp_page/SignUp";
+
 import Blog from "./pages/Blog_page/Blog";
 import MoreBlog1 from "./pages/Blog_page/more_blog1";
 import MoreBlog2 from "./pages/Blog_page/more_blog2";
@@ -41,6 +44,9 @@ const App = () => {
         <Route path="/more_news4" element={<MoreNews4 />} />
         <Route path="/more_news5" element={<MoreNews5 />} />
         <Route path="/more_news6" element={<MoreNews6 />} />
+
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
 
         <Route path="/more_service1" element={<MoreService1 />} />
         <Route path="/more_service2" element={<MoreService2 />} />
