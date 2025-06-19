@@ -38,8 +38,16 @@ const Header = () => {
             </div>
           </a>
 
-          {/* Search Bar */}
-          <SearchBar />
+          {/* Search Bar và Nút Đăng nhập */}
+          <div className="flex items-center space-x-4">
+            <SearchBar />
+            <a
+              href="/signin"
+              className="ml-4 px-5 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors font-semibold shadow"
+            >
+              Đăng nhập
+            </a>
+          </div>
         </div>
       </div>
 
