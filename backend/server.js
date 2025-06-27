@@ -42,5 +42,8 @@ app.use("/api/about", aboutRoutes);
 const blogRoutes = require("./routes/blogRoutes");
 app.use("/api/blogs", blogRoutes);
 
+const newsRoutes = require("./routes/newsRoutes");
+app.use("/api/news", newsRoutes);
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
