@@ -1,21 +1,41 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function SignUp() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
-  const [agree, setAgree] = useState(false);
-  const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
+  const [showRepeatPassword, setShowRepeatPassword] = useState(false);
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    AOS.init({ duration: 800, once: true });
+  }, []);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (password !== repeatPassword) {
       alert("Passwords do not match!");
       return;
     }
-    // TODO: Gọi API đăng ký ở đây
+    try {
+      const res = await fetch("http://localhost:5000/api/auth/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, email, password }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        alert("Đăng ký thành công!");
+        window.location.href = "/signin";
+      } else {
+        alert(data.message);
+      }
+    } catch (err) {
+      alert("Lỗi kết nối server!");
+    }
   };
 
   return (
@@ -28,7 +48,10 @@ export default function SignUp() {
       }}
     >
       {/* Khối trắng bao toàn bộ logo, text và form */}
-      <div className="w-full max-w-4xl mx-auto flex flex-col items-center mt-12 mb-8 bg-white bg-opacity-95 rounded-2xl shadow-2xl z-10 p-8">
+      <div
+        className="w-full max-w-4xl mx-auto flex flex-col items-center mt-12 mb-8 bg-white bg-opacity-95 rounded-2xl shadow-2xl z-10 p-8"
+        data-aos="fade-up"
+      >
         <div className="flex items-center justify-center mb-6">
           <img
             src="src/assets/images/logo_ISED.jpg"
@@ -48,12 +71,12 @@ export default function SignUp() {
                 className="w-56 h-56 object-contain"
               />
               {/* Nút quay về trang chủ */}
-              <button
-                className="mt-4 font-bold bg-blue-500 text-white px-5 py-2 rounded hover:bg-blue-600 transition"
-                onClick={() => navigate("/")}
+              <a
+                href="/"
+                className="mt-4 font-bold bg-blue-500 text-white px-5 py-2 rounded hover:bg-blue-600 transition text-center"
               >
                 ← Quay về trang chủ
-              </button>
+              </a>
             </div>
             <form
               className="flex-1 p-10 flex flex-col justify-center"
@@ -87,29 +110,61 @@ export default function SignUp() {
                 </label>
               </div>
               <div className="mb-4">
-                <label className="flex items-center">
+                <label className="flex items-center relative w-full">
                   <span className="mr-2">🔒</span>
                   <input
-                    type="password"
+                    type={showPassword ? "text" : "password"}
                     placeholder="Mật khẩu"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="w-4/5 py-2 border-0 border-b border-gray-300 focus:outline-none"
+                    className="w-4/5 py-2 border-0 border-b border-gray-300 focus:outline-none pr-10"
                     required
                   />
+                  <button
+                    type="button"
+                    className="absolute right-2 top-1/2 -translate-y-1/2"
+                    tabIndex={-1}
+                    onClick={() => setShowPassword((v) => !v)}
+                  >
+                    <img
+                      src={
+                        showPassword
+                          ? "/src/assets/images/hide_pass.jpg"
+                          : "/src/assets/images/show_pass.jpg"
+                      }
+                      alt={showPassword ? "Ẩn mật khẩu" : "Hiện mật khẩu"}
+                      className="w-6 h-6"
+                    />
+                  </button>
                 </label>
               </div>
               <div className="mb-4">
-                <label className="flex items-center">
+                <label className="flex items-center relative w-full">
                   <span className="mr-2">🔒</span>
                   <input
-                    type="password"
+                    type={showRepeatPassword ? "text" : "password"}
                     placeholder="Nhập lại mật khẩu"
                     value={repeatPassword}
                     onChange={(e) => setRepeatPassword(e.target.value)}
-                    className="w-4/5 py-2 border-0 border-b border-gray-300 focus:outline-none"
+                    className="w-4/5 py-2 border-0 border-b border-gray-300 focus:outline-none pr-10"
                     required
                   />
+                  <button
+                    type="button"
+                    className="absolute right-2 top-1/2 -translate-y-1/2"
+                    tabIndex={-1}
+                    onClick={() => setShowRepeatPassword((v) => !v)}
+                  >
+                    <img
+                      src={
+                        showRepeatPassword
+                          ? "/src/assets/images/hide_pass.jpg"
+                          : "/src/assets/images/show_pass.jpg"
+                      }
+                      alt={showRepeatPassword ? "Ẩn mật khẩu" : "Hiện mật khẩu"}
+                      className="w-6 h-6"
+                    />
+                  </button>
                 </label>
               </div>
 
@@ -120,19 +175,14 @@ export default function SignUp() {
                 Đăng ký
               </button>
               <div>
-                <span
-                  className="text-sm underline cursor-pointer"
-                  onClick={() => navigate("/signin")}
-                >
+                <a href="/signin" className="text-sm underline cursor-pointer">
                   Đã có tài khoản? Đăng nhập ngay
-                </span>
+                </a>
               </div>
             </form>
           </div>
         </div>
       </div>
-      {/* Nếu muốn lớp phủ mờ, giữ lại dòng dưới, nếu không thì xóa đi */}
-      {/* <div className="absolute inset-0 bg-white/60 pointer-events-none" style={{zIndex: 1}}></div> */}
     </div>
   );
 }
