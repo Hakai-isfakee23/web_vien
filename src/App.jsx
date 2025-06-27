@@ -8,6 +8,7 @@ import News from "./pages/News_page/News";
 import Admin from "./pages/Admin_page/Admin";
 import ManageServices from "./pages/Admin_page/manage_services";
 import ManageAbout from "./pages/Admin_page/manage_about";
+import ManageBlog from "./pages/Admin_page/manage_blog";
 
 import MoreNews1 from "./pages/News_page/more_news1";
 import MoreNews2 from "./pages/News_page/more_news2";
@@ -41,6 +42,7 @@ const App = () => {
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin/manage_services" element={<ManageServices />} />
         <Route path="/admin/manage_about" element={<ManageAbout />} />
+        <Route path="/admin/manage_blog" element={<ManageBlog />} />
 
         <Route path="/blog" element={<Blog />} />
         <Route path="/more_blog1" element={<MoreBlog1 />} />

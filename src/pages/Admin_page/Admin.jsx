@@ -39,7 +39,7 @@ export default function Admin() {
         data-aos="fade-up"
       >
         <a
-          href="/admin/home"
+          href="/admin/manage_home"
           className="px-6 py-3 bg-white border border-blue-400 text-blue-700 font-semibold rounded-lg shadow hover:bg-blue-50 transition"
         >
           Quản lý Trang chủ
@@ -57,13 +57,13 @@ export default function Admin() {
           Quản lý Dịch vụ
         </a>
         <a
-          href="/admin/news"
+          href="/admin/manage_news"
           className="px-6 py-3 bg-white border border-blue-400 text-blue-700 font-semibold rounded-lg shadow hover:bg-blue-50 transition"
         >
           Quản lý Tin tức
         </a>
         <a
-          href="/admin/blog"
+          href="/admin/manage_blog"
           className="px-6 py-3 bg-white border border-blue-400 text-blue-700 font-semibold rounded-lg shadow hover:bg-blue-50 transition"
         >
           Quản lý Blog
