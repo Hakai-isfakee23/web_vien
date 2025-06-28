@@ -40,12 +40,23 @@ const Services = () => {
   const fetchServices = async () => {
     try {
       const res = await axios.get("/api/services");
-      // Nếu có dữ liệu từ API thì dùng, không thì giữ dữ liệu tĩnh
       if (Array.isArray(res.data) && res.data.length > 0) {
-        setServices(res.data);
+        // Đảm bảo mỗi service có đúng link tương ứng nếu API không trả về link
+        const mapped = res.data.map((item, idx) => ({
+          ...item,
+          link:
+            item.link ||
+            (idx === 0
+              ? "/more_service1"
+              : idx === 1
+              ? "/more_service2"
+              : idx === 2
+              ? "/more_service3"
+              : "#"),
+        }));
+        setServices(mapped);
       }
     } catch (error) {
-      // Nếu lỗi API thì vẫn giữ dữ liệu tĩnh
       console.error(error);
     }
   };
@@ -72,7 +83,7 @@ const Services = () => {
                 <div className="flex justify-center items-center text-4xl mb-4">
                   {service.icon || "🛠️"}
                 </div>
-                <a href={service.link || "#"}>
+                <a href={service.link}>
                   <h3 className="text-xl font-bold text-left hover:text-blue-600">
                     {service.title}
                   </h3>
@@ -81,7 +92,7 @@ const Services = () => {
                   {service.description}
                 </p>
                 <a
-                  href={service.link || "#"}
+                  href={service.link}
                   className="mt-4 text-blue-600 font-medium hover: text-center"
                 >
                   Read more →
