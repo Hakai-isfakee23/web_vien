@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import imageList from "../../assets/images/imageList";
 import { useNavigate } from "react-router-dom";
 
 export default function ManageBlog() {
@@ -69,12 +70,25 @@ export default function ManageBlog() {
           onChange={(e) => setForm({ ...form, content: e.target.value })}
           required
         />
-        <input
-          className="border p-2 w-full"
-          placeholder="Link ảnh (image_url)"
+        <select
+          className="border p-2 w-full max-h-40 overflow-y-auto"
           value={form.image_url}
           onChange={(e) => setForm({ ...form, image_url: e.target.value })}
-        />
+        >
+          <option value="">-- Chọn hình ảnh --</option>
+          {imageList.map((img) => (
+            <option key={img} value={`/src/assets/images/${img}`}>
+              {img}
+            </option>
+          ))}
+        </select>
+        {form.image_url && (
+          <img
+            src={form.image_url}
+            alt="preview"
+            className="w-32 h-20 object-cover my-2"
+          />
+        )}
         <div className="flex gap-3">
           <button
             type="submit"

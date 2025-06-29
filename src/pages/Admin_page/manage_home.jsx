@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import imageList from "../../assets/images/imageList";
 
 export default function ManageHome() {
   // Banner
@@ -79,14 +80,28 @@ export default function ManageHome() {
             onChange={(e) => setBanner({ ...banner, subtitle: e.target.value })}
             required
           />
-          <input
-            className="border p-2 w-full"
-            placeholder="Link ảnh banner"
+          {/* Dropdown chọn ảnh banner */}
+          <select
+            className="border p-2 w-full max-h-40 overflow-y-auto"
             value={banner.image_url}
             onChange={(e) =>
               setBanner({ ...banner, image_url: e.target.value })
             }
-          />
+          >
+            <option value="">-- Chọn hình ảnh banner --</option>
+            {imageList.map((img) => (
+              <option key={img} value={`/src/assets/images/${img}`}>
+                {img}
+              </option>
+            ))}
+          </select>
+          {banner.image_url && (
+            <img
+              src={banner.image_url}
+              alt="preview"
+              className="w-32 h-20 object-cover my-2"
+            />
+          )}
           <button
             className="bg-blue-600 text-white px-4 py-2 rounded"
             type="submit"
@@ -107,12 +122,26 @@ export default function ManageHome() {
             onChange={(e) => setUnitForm({ ...unitForm, name: e.target.value })}
             required
           />
-          <input
-            className="border p-2 w-full"
-            placeholder="Logo (link ảnh)"
+          {/* Dropdown chọn logo đơn vị */}
+          <select
+            className="border p-2 w-full max-h-40 overflow-y-auto"
             value={unitForm.logo}
             onChange={(e) => setUnitForm({ ...unitForm, logo: e.target.value })}
-          />
+          >
+            <option value="">-- Chọn logo đơn vị --</option>
+            {imageList.map((img) => (
+              <option key={img} value={`/src/assets/images/${img}`}>
+                {img}
+              </option>
+            ))}
+          </select>
+          {unitForm.logo && (
+            <img
+              src={unitForm.logo}
+              alt="preview"
+              className="w-32 h-20 object-cover my-2"
+            />
+          )}
           <input
             className="border p-2 w-full"
             placeholder="Website (url)"
