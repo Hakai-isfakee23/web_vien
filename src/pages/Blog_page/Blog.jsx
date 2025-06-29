@@ -34,11 +34,7 @@ const Blog = () => {
             Blog
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {blogs.length === 0 && (
-              <>
-                {/* ... fallback tĩnh ... */}
-              </>
-            )}
+            {blogs.length === 0 && <>{/* ... fallback tĩnh ... */}</>}
             {blogs.map((item, idx) => (
               <div
                 key={item.id}
@@ -68,7 +64,7 @@ const Blog = () => {
                     href={`/more_blog${item.id}`}
                     className="mt-4 text-blue-600 font-medium hover:underline text-center"
                   >
-                    Đọc tiếp &rarr;
+                    Read more &rarr;
                   </a>
                 </div>
               </div>
